@@ -21,7 +21,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
+
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access itw
     - name: Build and push Docker images
       uses: docker/build-push-action@v1.1.0
@@ -33,13 +35,13 @@ jobs:
         # Server address of Docker registry. If not set then will default to Docker Hub
 #         registry: # optional
         # Docker repository to tag the image with
-        repository: frullah/docker-rubocop
+        repository: docker-rubocop
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
 #         tags: # optional
         # Automatically tags the built image with the git reference as per the readme
-#         tag_with_ref: # optional
+        tag_with_ref: truel
         # Automatically tags the built image with the git short SHA as per the readme
-#         tag_with_sha: # optional
+        tag_with_sha: true
         # Path to the build context
 #         path: # optional, default is .
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
