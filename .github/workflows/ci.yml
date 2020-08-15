@@ -22,9 +22,3 @@ jobs:
           repository: frullah/docker-rubocop
           tag_with_ref: true
           tag_with_sha: true
-  test:
-    runs-on: ubuntu-latest
-    container: frullah/docker-rubocop
-    steps:
-      - name: Test rubocop command
-        run: docker run --rm frullah/docker-rubocop rubocop --version
