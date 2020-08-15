@@ -4,4 +4,4 @@ RUN gem install rubocop -v 0.89.1
 
 WORKDIR /app
 
-ENTRYPOINT ["rubocop"]
+CMD ["rubocop"]
